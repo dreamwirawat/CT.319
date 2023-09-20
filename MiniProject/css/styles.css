@@ -1,0 +1,600 @@
+@import 'https://fonts.googleapis.com/css?family=Kanit|Prompt';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Prompt', sans-serif;
+}
+
+.top_bar {
+    height: 290px;
+    background-image: url('bg.png');
+    background-size: cover;
+    background-position: center;
+    padding: 20px 20px;
+}
+
+.top_bar_manage {
+    height: 150px;
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 20px 20px;
+}
+
+.bg {
+    position: absolute;
+    width: 100%;
+    height: 290px;
+    object-fit: cover;
+}
+
+.allbut {
+    display: flex;
+    justify-content: space-between;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+}
+
+.searchBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+    height: 35px;
+    padding-left: 20px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 10px -7px #161616;
+    background: #ffff;
+}
+
+.searhIn {
+    display: flex;
+    align-items: center;
+}
+
+.searhIn i {
+    cursor: pointer;
+}
+
+#searchInput {
+    width: 100%;
+    height: 35px;
+    border: none;
+    padding: 0 10px 0 10px;
+    outline: none;
+    font-size: 14px;
+}
+
+#searchButton {
+    width: 100px;
+    height: 35px;
+    background: #FF9900;
+    color: #ffff;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.selectTypeBox {
+    width: 10%;
+}
+
+#typeCW {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 35px;
+    padding: 0 8px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px -7px #161616;
+}
+
+.login {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 20px;
+    width: 200px;
+}
+
+.shownameLog {
+    color: #ffff;
+}
+
+#loginButtons,
+#logoutButton {
+    width: 120px;
+    height: 35px;
+    background: #ffff;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-shadow: 4px 4px 10px -7px #161616;
+    cursor: pointer;
+}
+
+.manageHide {
+    visibility: hidden;
+}
+
+.manage #manageData{
+    width: 120px;
+    height: 35px;
+    background: #ffff;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-shadow: 4px 4px 10px -7px #161616;
+    cursor: pointer;
+}
+
+.manage #manageDataAdmin{
+    width: 120px;
+    height: 55px;
+    background: #ffff;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-shadow: 4px 4px 10px -7px #161616;
+    cursor: pointer;
+}
+
+.back #backButton{
+    width: 120px;
+    height: 35px;
+    background: #ffff;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-shadow: 4px 4px 10px -7px #161616;
+    cursor: pointer;
+}
+
+
+/*----------------------------modal login---------------------------------*/
+
+#modalLog {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#modalLogin {
+    background: #ffff;
+    margin: 8% auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 30%;
+    height: 600px;
+    border-radius: 20px;
+    transition: all .5s;
+}
+
+#modalLogin .modalTop {
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+}
+
+#modalLogin .closeHidden {
+    visibility: hidden;
+}
+
+#modalLogin .close {
+    display: flex;
+    align-items: start;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+#modalLogin .modalFooter {
+    margin-top: 218px;
+}
+
+#modalLogin .usernameBox,
+#modalLogin .passwordBox,
+#modalLogin .logButton,
+#modalLogin .regisButton {
+    width: 100%;
+}
+
+#modalLogin .logButton {
+    margin-bottom: 10px;
+}
+
+#modalLogin .usernameBox {
+    margin-top: 70px;
+}
+
+#modalLogin .passwordBox {
+    margin-top: 10px;
+}
+
+#modalLogin #username,
+#modalLogin #password {
+    width: 100%;
+    height: 35px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #F2F2F2;
+    outline: none;
+}
+
+#modalLogin #logButton {
+    width: 100%;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+    background: #FF9900;
+    color: #ffff;
+    cursor: pointer;
+}
+
+#modalLogin #logButton:hover {
+    background: #e48900;
+}
+
+#modalLogin #regisButton {
+    width: 100%;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+    background: #e6e6e6;
+    cursor: pointer;
+}
+
+#modalLogin #regisButton:hover {
+    background: #cacaca;
+}
+
+/*----------------------------end modal login---------------------------------*/
+
+
+/*----------------------------modal register---------------------------------*/
+
+#modalRegister {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#modalRegis {
+    background: #ffff;
+    margin: 8% auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 30%;
+    height: 600px;
+    border-radius: 20px;
+    transition: all .5s;
+}
+
+#modalRegis .modalTop {
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+}
+
+#modalRegis .closeHidden {
+    visibility: hidden;
+}
+
+#modalRegis .close {
+    display: flex;
+    align-items: start;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+#modalRegis .modalFooter {
+    margin-top: 80px;
+}
+
+#modalRegis .usernameBox,
+#modalRegis .passwordBox,
+#modalRegis .logButton,
+#modalRegis .regisButton {
+    width: 100%;
+}
+
+#modalRegis .logButton {
+    margin-bottom: 10px;
+}
+
+#modalRegis .usernameBox {
+    margin-top: 70px;
+}
+
+#modalRegis .nameBox {
+    display: flex;
+    justify-content: space-between;
+}
+
+#modalRegis .passwordBox,
+#modalRegis .nameBox,
+#modalRegis .email {
+    margin-top: 10px;
+}
+
+#modalRegis #usernameRegis,
+#modalRegis #passwordRegis,
+#modalRegis #nameRegis,
+#modalRegis #surnameRegis,
+#modalRegis #emailRegis {
+    width: 100%;
+    height: 35px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #F2F2F2;
+    outline: none;
+}
+
+#modalRegis .logButton {
+    margin-top: 10px;
+}
+
+#modalRegis #loginButton {
+    width: 100%;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+    background: #e6e6e6;
+    cursor: pointer;
+}
+
+#modalRegis #loginButton:hover {
+    background: #cacaca;
+}
+
+#modalRegis #registerButton {
+    width: 100%;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+    background: #FF9900;
+    color: #ffff;
+    cursor: pointer;
+}
+
+#modalRegis #registerButton:hover {
+    background: #e48900;
+}
+
+/*----------------------------end modal register---------------------------------*/
+
+.content {
+    padding: 30px 50px;
+}
+
+#addNewButton {
+    width: 180px;
+    height: 35px;
+    background: #FF9900;
+    color: #ffff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#addNewButton:hover {
+    background: #e48900;
+}
+
+/*----------------------------modal addnew data---------------------------------*/
+
+#modalAddnew {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#modalAddData {
+    background: #ffff;
+    margin: 4% auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 30%;
+    height: 600px;
+    border-radius: 20px;
+    transition: all .5s;
+}
+
+#modalAddData .modalTop {
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+}
+
+#modalAddData .closeHidden {
+    visibility: hidden;
+}
+
+#modalAddData .close {
+    display: flex;
+    align-items: start;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+#modalAddData .modalFooter {
+    margin-top: 30px;
+}
+
+#modalAddData .nameBox,
+#modalAddData .provinceBox,
+#modalAddData .detailsBox,
+#modalAddData .imgBox {
+    width: 100%;
+}
+
+#modalAddData .logButton {
+    margin-bottom: 10px;
+}
+
+#modalAddData .nameBox {
+    margin-top: 70px;
+}
+
+#modalAddData .provinceBox,
+#modalAddData .detailsBox,
+#modalAddData .imgBox {
+    margin-top: 10px;
+}
+
+#modalAddData #nameLocation,
+#modalAddData #province {
+    width: 100%;
+    height: 35px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #F2F2F2;
+    outline: none;
+}
+
+.detailsBox textarea {
+    width: 100%;
+    height: 132px;
+    padding: 5px 10px;
+    resize: none;
+    border: none;
+    border-radius: 10px;
+    background: #F2F2F2;
+    outline: none;
+}
+
+#modalAddData #addnewButton {
+    width: 100%;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+    background: #FF9900;
+    color: #ffff;
+    cursor: pointer;
+}
+
+#modalAddData #addnewButton:hover {
+    background: #e48900;
+}
+
+
+/*----------------------------end modal addnew data---------------------------------*/
+
+.dataBox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.dataLists {
+    display: flex;
+    width: 100%;
+    height: 250px;
+    background: #F5F5F5;
+    border-radius: 20px;
+    box-shadow: 4px 4px 10px -7px #161616;
+    transition-duration: 800ms;
+}
+
+.dataLists:is(:hover, :focus){
+    transform: scale(1.03);
+}
+
+.boxImg img {
+    width: 250px;
+    height: 250px;
+    border-radius: 20px 0 0 20px;
+    object-fit: cover;
+    background-position: center;
+}
+
+.boxData {
+    width: 100%;
+    padding: 20px;
+}
+
+.nameTopic{
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.nameUser{
+    font-size: 12px;
+}
+
+#dataDetails {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: #F5F5F5;
+    cursor: default;
+    resize: none;
+}
+
+.seemoreButton {
+    display: flex;
+    justify-content: end;
+}
+
+#seemore {
+    width: 100px;
+    height: 35px;
+    border: none;
+    border-radius: 13px;
+    background: #FF9900;
+    color: #ffff;
+    cursor: pointer;
+}
+
+.bar{
+    display: flex;
+    justify-content: space-between;
+}
+
+.valueDatas{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#valueLocation{
+    display: flex;
+    align-items: center;
+    height: 35px;
+    padding: 0 10px;
+    border-radius: 10px;
+    background: #f0f0f0;
+}
+
